@@ -1,6 +1,7 @@
 const mongoose=require("mongoose");
 const Schema=mongoose.Schema;
-const Review=require("./review.js")
+const Review=require("./review.js");
+const { string } = require("joi");
 const listingSchema=new Schema({
     title:{
         type:String,
@@ -17,15 +18,9 @@ const listingSchema=new Schema({
 //     default: 'https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?...',
 // },
 image: {
-    filename: { type: String, default: 'listingimage' },
-    url: { 
-        type: String, 
-        default: 'https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?...'
-    }
+    url:String,
+     filename:String,
 },
-
-
-
     price:Number,
     location:String,
     country:String,
